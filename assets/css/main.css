@@ -1,0 +1,28 @@
+.container1{
+    width: 410px;
+    height: auto;
+    padding: 5px;
+    box-shadow: 1px 4px 14px 4px rgba(49, 49, 49, 0.1);
+    border-radius: 8px;
+    margin-top: 10px;
+}
+#calculation-div{
+    height: 80px;
+    border:0.1px solid rgb(228, 228, 228); 
+}
+button{
+    min-width: 70px;
+    height: 40px;
+    margin: 4px 1px;
+} 
+.btn{
+    margin-top: 6px;
+    margin-left: 8px;
+}
+#mc-gray{
+    color: gray;
+}
+
+#mr-gray{
+    color: gray;
+}

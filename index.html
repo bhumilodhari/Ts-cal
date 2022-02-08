@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scientific Calculator</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="shortcut icon" href="./assets/images/images.jpeg" type="jpeg">
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="./assets/css/all.css" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.css" />
+  </head>
+  
+  <body>  
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="container1"> 
+          <div class="form-control form-control-lg text-right" id="calculation-div" placeholder="0"></div>
+          <div class="row d-flex d-flex">
+            <div class="col">
+              <button class="btn btn-light" onclick="radianToDegree()">DEG</button>
+              <button class="btn btn-light" onclick="fixedExp()">F-E</button>
+            </div>
+          </div>
+      
+          <div class="row">
+           <div class="col d-flex">
+            <button class="btn btn-light" id="mc-gray" onclick="memoryClear()" id="memory-clear">MC</button>
+            <button class="btn btn-light" id="mr-gray" onclick="memoryRecall()" id="memory-recall">MR</button>
+            <button class="btn btn-light" onclick="memoryPlus()">M+</button>
+            <button class="btn btn-light" onclick="memoryMinus()">M-</button>
+            <button class="btn btn-light" onclick="memorySave()">MS</button>
+           </div>
+          </div>
+
+          <div class="row">
+            <div class="col d-flex justify-content-start">
+             <div class="dropdown">
+              <button class="btn btn-light" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span>&#8895;</span> Trigonomerty
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdown-box">
+                <div data-value="sin" onclick="trigonometry('sin')" class="dropdown-item">sin</div>
+                <div data-value="cos" onclick="trigonometry('cos')" class="dropdown-item">cos</div>
+                <div data-value="tan" onclick="trigonometry('tan')" class="dropdown-item">tan</div>
+                <div data-value="cot" onclick="trigonometry('cot')" class="dropdown-item">cot</div>
+                <div data-value="sec" onclick="trigonometry('sec')" class="dropdown-item">sec</div>
+                <div data-value="cosec" onclick="trigonometry('cosec')" class="dropdown-item">cosec</div>
+              </div>
+             </div>
+  
+             <div class="dropdown">
+              <button class="btn btn-light" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span>&#402;</span> Function
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdown-box">
+                <div data-value="round" onclick="mathFunction('round')" class="dropdown-item">Round</div>
+                <div data-value="ceil" onclick="mathFunction('ceil')" class="dropdown-item">Ceil</div>
+                <div data-value="floor" onclick="mathFunction('floor')" class="dropdown-item">Floor</div>
+                <div data-value="trunc" onclick="mathFunction('trunc')" class="dropdown-item">Trunc</div>
+              </div>
+             </div>
+            </div>
+          </div>  
+  
+          <div class="row">
+            <div class="col d-flex">
+            <button class="btn btn-light">2<sup>nd</sup></button>
+            <button class="btn btn-light" data-value="3.14" onclick="addChar(this)">
+              <span title="PI">&#960;</span>
+            </button>
+            <button class="btn btn-light" data-value="2.71828" onclick="addChar(this)">
+              <span title="e">&#8495;</span>
+            </button>
+            <button class="btn btn-light" data-value="clear" onclick="clearScreen()">
+              <span>C</span>
+            </button>
+            <button class="btn btn-light" data-value="backspace" onclick="backSpace()">
+              <i class="material-icons" id="backspace">backspace</i>
+            </button>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col d-flex">
+            <button class="btn btn-light" data-value="^2" onclick="cal_square()">
+              <span>x<sup>2</sup></span>
+            </button>
+            <button class="btn btn-light" data-value="1/" onclick="addChar(this)">
+              <span>1/x</span>
+            </button>
+            <button class="btn btn-light" data-value="" onclick="cal_absolute()">
+              <span>| x |</span>
+            </button>
+            <button class="btn btn-light" onclick="cal_exp()">exp</button>
+            <button class="btn btn-light" data-value="%" onclick="addChar(this)">mod</button>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col d-flex">
+            <button class="btn btn-light" data-value="√" onclick="cal_sqrt()">
+              <span title="square_root">&#8730;x</span>
+            </button>
+            <button class="btn btn-light" data-value="(" onclick="addChar(this)">
+              <span>(</span>
+            </button>
+            <button class="btn btn-light" data-value=")" onclick="addChar(this)">
+              <span>)</span>
+            </button>
+            <button class="btn btn-light" data-value="!" onclick="cal_factorial()">
+              <span>n!</span>
+            </button>
+            <button class="btn btn-light" data-value="/" onclick="addChar(this)">
+              <span class="division" title="division">&#247;</span>
+            </button>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col d-flex">
+            <button class="btn btn-light" data-value="**" onclick="addChar(this)">
+              <span>x<sup>y</sup></span>
+            </button>
+            <button class="btn btn-light" data-value="7" onclick="addChar(this)">
+              <span class="numericValue"><strong>7</strong></span>
+            </button>
+            <button class="btn btn-light" data-value="8" onclick="addChar(this)">
+              <span class="numericValue"><strong>8</strong></span>
+            </button>
+            <button class="btn btn-light" data-value="9" onclick="addChar(this)">
+              <span class="numericValue"><strong>9</strong></span>
+            </button>
+            <button class="btn btn-light" data-value="*" onclick="addChar(this)">
+              <span title="multiplication">&#10799;</span>
+            </button>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col d-flex">
+            <button class="btn btn-light" data-value="10^" onclick="cal_ten_pow()">
+              <span >10<sup>x</sup></span>
+            </button>
+            <button class="btn btn-light" data-value="4" onclick="addChar(this)">
+              <span class="numericValue"><strong>4</strong></span>
+            </button>
+            <button class="btn btn-light" data-value="5" onclick="addChar(this)">
+              <span class="numericValue"><strong>5</strong></span>
+            </button>
+            <button class="btn btn-light" data-value="6" onclick="addChar(this)">
+              <span class="numericValue"><strong>6</strong></span>
+            </button>
+            <button class="btn btn-light" data-value="-" onclick="addChar(this)">
+              <span class="minus" title="minus">&#8722;</span>
+            </button>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col d-flex">
+            <button class="btn btn-light" data-value="log" onclick="cal_log()">
+              <span>log</span>
+            </button>
+            <button class="btn btn-light" data-value="1" onclick="addChar(this)">
+              <span class="numericValue"><strong>1</strong></span>
+            </button>
+            <button class="btn btn-light" data-value="2" onclick="addChar(this)">
+              <span class="numericValue"><strong>2</strong></span>
+            </button>
+            <button class="btn btn-light" data-value="3" onclick="addChar(this)">
+              <span class="numericValue"><strong>3</strong></span>
+            </button>
+            <button class="btn btn-light" data-value="+" onclick="addChar(this)">
+              <span class="plus" title="plus">&#43;</span>
+            </button>
+            </div>
+          </div>
+  
+          <div class="row">
+           <div class="col d-flex">
+            <button class="btn btn-light" data-value="ln" onclick="cal_ln()">
+              <span>ln</span>
+            </button>
+            <button class="btn btn-light" data-value="&#177;" onclick="plusorMinus(this)">
+              <span title="plusOrMinus">&#177;</span>
+            </button>
+            <button class="btn btn-light" data-value="0" onclick="addChar(this)">
+              <span class="numericValue"><strong>0</strong></span>
+            </button>
+            <button class="btn btn-light" data-value="." onclick="addChar(this)">
+              <span>.</span>
+            </button>
+            <button class="btn btn-light" style="background-color: lightblue;" data-value="=" onclick="calculate()">
+              <span class="equal">=</span>
+            </button>
+           </div>
+          </div>
+
+          </div>
+      </div>
+    </div>
+
+    <script src="./assets/scripts/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+  </body>
+</html>
