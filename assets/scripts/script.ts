@@ -1,5 +1,6 @@
 let calculationDiv : HTMLElement = document.getElementById("calculation-div");
 
+//Number Formation Function by commaa 
 
 /** 
 * @description convert input string into comma seperated value
@@ -12,8 +13,8 @@ let calculationDiv : HTMLElement = document.getElementById("calculation-div");
   }
 
 /** 
-* @description generate maths eqution to eval.  
-* @function addChar(element : html-element)
+* @description Get the value.  
+* @function addChar(element)
 * @param {html-element} element : it is a value assoiated with button */
 
   function addChar(element : any) {
@@ -28,6 +29,8 @@ let calculationDiv : HTMLElement = document.getElementById("calculation-div");
     }
   }
 
+// Calculation Function
+
 /** 
  * @function calculate()
  * @description it will calculate the math equation and give output */
@@ -35,6 +38,8 @@ let calculationDiv : HTMLElement = document.getElementById("calculation-div");
     let calValue : string = calculationDiv.innerText.replace(/,/g, '');
     calculationDiv.innerText = formatNumbersWithComma(eval(calValue).toString());
   }
+
+// BackSpace Function
 
 /** 
  * @function backSpace()
@@ -46,12 +51,16 @@ let calculationDiv : HTMLElement = document.getElementById("calculation-div");
     calculationDiv.innerText = formatNumbersWithComma(newcalValue);
   }
 
+// ClearScreen Function
+
 /** 
  * @function clearScreen()
  * @description it clear outputbox(display part)*/
   function clearScreen(): void {
     calculationDiv.innerText = "";
   }
+
+// Plus Or Minus sign change Function
 
 /** 
  * @descriptionit change sign of current input (like plus to minus/ minus to plus)
@@ -62,10 +71,18 @@ let calculationDiv : HTMLElement = document.getElementById("calculation-div");
     calculationDiv.innerText = formatNumbersWithComma(calVal.toString());
   }
 
+// Trigonomentry Functions
+
+/** 
+ * @description Here we can use interface to set type of functionName its will string type
+ * @description but it's not required if we add on function parameter  
+ * @function mathFunction(functionName : string)*/
 /**
  * @description trigonometry function to calculate sin,cos,tan,cot,sec,cosec
  * @function trigonometry(function name) */
-  function trigonometry(fun : any) :void {
+
+  
+  function trigonometry(fun : string) :void {
     let calValue : number = Number(calculationDiv.innerText.replace(/,/g, ''));
     let result : number = 0;
     switch (fun) {
@@ -90,10 +107,18 @@ let calculationDiv : HTMLElement = document.getElementById("calculation-div");
         calculationDiv.innerText = formatNumbersWithComma(result.toString());
   }
 
+// Math Functions
+
+ 
+/** 
+ * @description Here we can use interface to set type of functionName its will string type
+ * @description but it's not required if we add on function parameter  
+ * @function mathFunction(functionName : string)*/
 /**
  * @description calculate the specified math function's value 
- * @function mathFunction(function_name : string)*/
-  function mathFunction(functionName:any) :void {
+ * @function mathFunction(function_name)*/
+  
+  function mathFunction(functionName : string) :void {
     let calValue : number = Number(calculationDiv.innerText.replace(/,/g, ''));
     let result : number = 0;
     switch (functionName) {
@@ -113,6 +138,8 @@ let calculationDiv : HTMLElement = document.getElementById("calculation-div");
     calculationDiv.innerText = formatNumbersWithComma(result.toString());
   }
 
+// Square Function 
+
 /**
  * @function cal_square()
  * @description calculate the square of the given input value  */
@@ -122,6 +149,8 @@ let calculationDiv : HTMLElement = document.getElementById("calculation-div");
     calculationDiv.innerText = formatNumbersWithComma(calValue.toString());
   }
 
+// Square Root Function
+
 /** 
  * @function cal_sqrt()
  * @description calculate the square root of the given input */
@@ -130,6 +159,8 @@ let calculationDiv : HTMLElement = document.getElementById("calculation-div");
     calculationDiv.innerText = Math.sqrt(calValue).toString();
   }
  
+// Absolute Function
+
 /** 
  * @function cal_absolute() 
  * @description calculate the absolute value of given input */ 
@@ -137,7 +168,9 @@ let calculationDiv : HTMLElement = document.getElementById("calculation-div");
     let calValue : number = Number(calculationDiv.innerText.replace(/,/g, ''));
     calculationDiv.innerText = String(Math.abs(calValue));
   }
- 
+
+// Exponent Function
+
 /**
  * @function cal_exp()
  * @description calculate the exponent value of the given value */
@@ -145,7 +178,9 @@ let calculationDiv : HTMLElement = document.getElementById("calculation-div");
     let calValue : number = Number(calculationDiv.innerText.replace(/,/g, ''));
     calculationDiv.innerText = String(Math.exp(calValue));
   }
-  
+
+// Fixed Exponent Function
+
 /** 
  * @function fixedExp()
  * @description fixed value with exponent values */
@@ -153,6 +188,8 @@ let calculationDiv : HTMLElement = document.getElementById("calculation-div");
     let calValue : number = Number(calculationDiv.innerText.replace(/,/g, ''));
     calculationDiv.innerText = formatNumbersWithComma(calValue.toExponential(3));
   }
+
+// Radian to Degree Function 
 
 /**
  * @function radianToDegree()
@@ -162,6 +199,8 @@ let calculationDiv : HTMLElement = document.getElementById("calculation-div");
     calValue = calValue * (180 / Math.PI);
     calculationDiv.innerText = formatNumbersWithComma(calValue.toString());
   }
+
+// Factorial Function
 
 /** 
  * @function cal_factorial()
@@ -181,7 +220,8 @@ let calculationDiv : HTMLElement = document.getElementById("calculation-div");
     }*/
     calculationDiv.innerText = result.toString();
   }
-  
+ 
+// Ten Pow Funtion 
 /**
  * @function cal_ten_pow() 
  * @description calculate the value of the power of 10 */
@@ -190,6 +230,7 @@ let calculationDiv : HTMLElement = document.getElementById("calculation-div");
     calculationDiv.innerText = Math.pow(10, calValue).toString();
   }
 
+// Log Function 
 /** 
  * @function cal_log()
  * @description calculate the logerithmic value base 10 and display result */
@@ -198,6 +239,7 @@ let calculationDiv : HTMLElement = document.getElementById("calculation-div");
     calculationDiv.innerText = Math.log10(calValue).toString();
   }
 
+// Logarithmic base e Function
 /** 
  * @function cal_ln() 
  * @description calculate the logerithmic value base e and display result */ 
@@ -206,29 +248,39 @@ let calculationDiv : HTMLElement = document.getElementById("calculation-div");
     calculationDiv.innerText = Math.log(calValue).toString();
   }
  
+// Memory Functions 
 
 /** @description MC, MR, M+, M-, MS Memory functions */
  let memoryValue : number = 0; /** @description  memoryvalue is a memory  which store the memory value */
  let memoryStatus : number = 0; /** @description memorystatus flag is used whether memory is present or not */
+
+// Memory clear Function
 
 /** 
  * @description clear  memory values
  * @function memoryClear() */
 function memoryClear() : void {
   memoryValue = 0;
-  memoryStatus = 0;
-  if (memoryStatus == 0) {
-      document.getElementById("memory-clear").style.opacity = "0.2";
-      document.getElementById("memory-recall").style.opacity = "0.2";
-  }
+  if (memoryStatus == 1) {
+    document.getElementById("mc-gray").style.color = "gray";
+    document.getElementById("mr-gray").style.color = "gray";
 }
+}
+
+// Memory Recall Function
 
 /**
  * @description calculate the value of memory values and display
  * @function memoryRecall() */
 function memoryRecall() :void {
   calculationDiv.innerText = formatNumbersWithComma(memoryValue.toString());
+  if (memoryStatus == 1) {
+    document.getElementById("mc-gray").style.color = "gray";
+    document.getElementById("mr-gray").style.color = "gray";
+  }
 }
+
+// Memory Plus Function
 
 /** 
  * @description add the input value to the memory stack
@@ -240,11 +292,13 @@ function memoryPlus() :void{
       memoryStatus = 1;
   }
   if (memoryStatus == 1) {
-      document.getElementById("memory-clear").style.opacity = "1";
-      document.getElementById("memory-recall").style.opacity = "1";
+    document.getElementById("mc-gray").style.color = "black";
+    document.getElementById("mr-gray").style.color = "black";
   }
   calculationDiv.innerText = "";
 }
+
+// Memory Minus Function
 
 /** 
  * @description reduse memory value by the givan value
@@ -256,12 +310,13 @@ function memoryMinus() : void {
       memoryStatus = 1;
   }
   if (memoryStatus == 1) {
-      document.getElementById("memory-clear").style.opacity = "1";
-      document.getElementById("memory-recall").style.opacity = "1";
-      memoryStatus = 1;
+    document.getElementById("mc-gray").style.color = "black";
+    document.getElementById("mr-gray").style.color = "black";
   }
   calculationDiv.innerText = "";
 }
+
+// Memory Save Function
 
  /**
   * @description put the input value into the memory stack
@@ -273,9 +328,9 @@ function memoryMinus() : void {
       memoryStatus = 1;
   }
   if (memoryStatus == 1) {
-      document.getElementById("memory-clear").style.opacity = "1";
-      document.getElementById("memory-recall").style.opacity = "1";
-  }
+    document.getElementById("mc-gray").style.color = "black";
+    document.getElementById("mr-gray").style.color = "black";
+}
   calculationDiv.innerText = "";
 }
   

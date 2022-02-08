@@ -235,9 +235,8 @@ function memoryMinus() {
         memoryStatus = 1;
     }
     if (memoryStatus == 1) {
-        document.getElementById("memory-clear").style.opacity = "1";
-        document.getElementById("memory-recall").style.opacity = "1";
-        memoryStatus = 1;
+        document.getElementById("mc-gray").style.color = "black";
+        document.getElementById("mr-gray").style.color = "black";
     }
     calculationDiv.innerText = "";
 }
@@ -251,8 +250,8 @@ function memorySave() {
         memoryStatus = 1;
     }
     if (memoryStatus == 1) {
-        document.getElementById("memory-clear").style.opacity = "1";
-        document.getElementById("memory-recall").style.opacity = "1";
+        document.getElementById("mc-gray").style.color = "black";
+        document.getElementById("mr-gray").style.color = "black";
     }
     calculationDiv.innerText = "";
 }
