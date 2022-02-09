@@ -85,23 +85,23 @@
   
           <div class="row">
             <div class="col d-flex">
-            <button class="btn btn-light" data-value="^2" onclick="cal_square()">
+            <button class="btn btn-light" data-value="^2" onclick="calSquare()">
               <span>x<sup>2</sup></span>
             </button>
             <button class="btn btn-light" data-value="1/" onclick="addChar(this)">
               <span>1/x</span>
             </button>
-            <button class="btn btn-light" data-value="" onclick="cal_absolute()">
+            <button class="btn btn-light" data-value="" onclick="calAbsolute()">
               <span>| x |</span>
             </button>
-            <button class="btn btn-light" onclick="cal_exp()">exp</button>
+            <button class="btn btn-light" onclick="calExp()">exp</button>
             <button class="btn btn-light" data-value="%" onclick="addChar(this)">mod</button>
             </div>
           </div>
   
           <div class="row">
             <div class="col d-flex">
-            <button class="btn btn-light" data-value="√" onclick="cal_sqrt()">
+            <button class="btn btn-light" data-value="√" onclick="calSqrt()">
               <span title="square_root">&#8730;x</span>
             </button>
             <button class="btn btn-light" data-value="(" onclick="addChar(this)">
@@ -110,7 +110,7 @@
             <button class="btn btn-light" data-value=")" onclick="addChar(this)">
               <span>)</span>
             </button>
-            <button class="btn btn-light" data-value="!" onclick="cal_factorial()">
+            <button class="btn btn-light" data-value="!" onclick="calFactorial()">
               <span>n!</span>
             </button>
             <button class="btn btn-light" data-value="/" onclick="addChar(this)">
@@ -141,7 +141,7 @@
   
           <div class="row">
             <div class="col d-flex">
-            <button class="btn btn-light" data-value="10^" onclick="cal_ten_pow()">
+            <button class="btn btn-light" data-value="10^" onclick="calTenPow()">
               <span >10<sup>x</sup></span>
             </button>
             <button class="btn btn-light" data-value="4" onclick="addChar(this)">
@@ -161,7 +161,7 @@
   
           <div class="row">
             <div class="col d-flex">
-            <button class="btn btn-light" data-value="log" onclick="cal_log()">
+            <button class="btn btn-light" data-value="log" onclick="calLog()">
               <span>log</span>
             </button>
             <button class="btn btn-light" data-value="1" onclick="addChar(this)">
@@ -181,10 +181,10 @@
   
           <div class="row">
            <div class="col d-flex">
-            <button class="btn btn-light" data-value="ln" onclick="cal_ln()">
+            <button class="btn btn-light" data-value="ln" onclick="calLn()">
               <span>ln</span>
             </button>
-            <button class="btn btn-light" data-value="&#177;" onclick="plusorMinus(this)">
+            <button class="btn btn-light" data-value="&#177;" onclick="plusOrMinus(this)">
               <span title="plusOrMinus">&#177;</span>
             </button>
             <button class="btn btn-light" data-value="0" onclick="addChar(this)">
