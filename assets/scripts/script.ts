@@ -1,4 +1,4 @@
-let calculationDiv : HTMLElement = document.getElementById("calculation-div");
+let calculationDiv : HTMLElement = document.getElementById("calculation-div")!; 
 
 //Number Formation Function by commaa 
 
@@ -237,7 +237,7 @@ let calculationDiv : HTMLElement = document.getElementById("calculation-div");
   function calFactorial() : void{
     let calValue : number = Number(calculationDiv.innerText.replace(/,/g, ''));
     let result: number = factorial(calValue);
-    function factorial(calValue)
+    function factorial(calValue : any) : any
     {
       if (calValue==1)
         return 1;
@@ -305,8 +305,8 @@ let calculationDiv : HTMLElement = document.getElementById("calculation-div");
  function memoryClear() : void {
   memoryValue = 0;
   if (memoryStatus == 1) {
-    document.getElementById("mc-gray").style.color = "gray";
-    document.getElementById("mr-gray").style.color = "gray";
+    document.getElementById("mc-gray")!.style.color = "gray";
+    document.getElementById("mr-gray")!.style.color = "gray";
   }
  }
 
@@ -320,8 +320,8 @@ let calculationDiv : HTMLElement = document.getElementById("calculation-div");
 function memoryRecall() :void {
   calculationDiv.innerText = formatNumbersWithComma(memoryValue.toString());
   if (memoryStatus == 1) {
-    document.getElementById("mc-gray").style.color = "gray";
-    document.getElementById("mr-gray").style.color = "gray";
+    document.getElementById("mc-gray")!.style.color = "gray";
+    document.getElementById("mr-gray")!.style.color = "gray";
   }
 }
 
@@ -339,8 +339,8 @@ function memoryPlus() :void{
       memoryStatus = 1;
   }
   if (memoryStatus == 1) {
-    document.getElementById("mc-gray").style.color = "black";
-    document.getElementById("mr-gray").style.color = "black";
+    document.getElementById("mc-gray")!.style.color = "black";
+    document.getElementById("mr-gray")!.style.color = "black";
   }
   calculationDiv.innerText = "";
 }
@@ -359,8 +359,8 @@ function memoryMinus() : void {
       memoryStatus = 1;
   }
   if (memoryStatus == 1) {
-    document.getElementById("mc-gray").style.color = "black";
-    document.getElementById("mr-gray").style.color = "black";
+    document.getElementById("mc-gray")!.style.color = "black";
+    document.getElementById("mr-gray")!.style.color = "black";
   }
   calculationDiv.innerText = "";
 }
@@ -379,8 +379,8 @@ function memoryMinus() : void {
       memoryStatus = 1;
   }
   if (memoryStatus == 1) {
-    document.getElementById("mc-gray").style.color = "black";
-    document.getElementById("mr-gray").style.color = "black";
+    document.getElementById("mc-gray")!.style.color = "black";
+    document.getElementById("mr-gray")!.style.color = "black";
 }
   calculationDiv.innerText = "";
 }
